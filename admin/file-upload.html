@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Village copa Admin page</title>
+    <!-- stylesheets -->
+    <link href="../assets/css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet" />
+
+    <!-- Font awesome -->
+
+    <link rel="stylesheet" href="../assets/font-awesome/css/all.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-md-2 sidebar d-none d-md-block">
+                <h5 class="fw-bold text-dark mt-5">Village <span style="color: rgb(84, 122, 28);">Copa</span></h5>
+                <ul class="nav flex-column mt-5">
+                    <li class="nav-item active"><i class="fa fa-home"></i><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><i class="fa fa-list"></i><a class="nav-link" href="#">Tasks</a></li>
+                    <li class="nav-item"><i class="fa fa-users"></i><a class="nav-link" href="#">Users</a></li>
+                    <li class="nav-item"><i class="fa fa-circle-exclamation"></i><a class="nav-link"
+                            href="#">Settings</a></li>
+                    <li class="nav-item"><i class="fa fa-message"></i><a class="nav-link" href="#">Help & Support</a>
+                    </li>
+                </ul>
+                <div class="mt-4 p-2 banner small">
+                    <div class="d-flex justify-content-end mb-2 mt-1">
+                        <button type="button" class="btn-close"
+                            style="background-color: transparent !important;"></button>
+                    </div>
+                    <strong>Space Almost Expired</strong><br />
+                    <p class="text-secondary">You're running out of space. Please upgrade!</p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-success" style="width:70%;"></div>
+                    </div>
+                    <div class="row clear">
+                        <a href="#" class="text-secondary col-lg-6">Dismiss</a>
+                        <a href="#" class="col-lg-6" style="color: rgb(0, 100, 7);">Go pro</a>
+                    </div>
+                </div>
+            </aside>
+            <main class="col-md-10 ms-sm-auto px-5 py-5 main-box">
+                <h5 class="fw-semibold mb-4">Upload Your Video File</h5>
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="upload-box d-flex flex-column align-item-center justify-content-center"
+                            id="dropzone">
+                            <i class="bi bi-upload"></i>
+                            <p class="fw-bold">Select Video to Upload</p>
+                            <p class="small">Supported Format: SVG, JPG, PNG (10mb each)</p>
+                            <input type="file" hidden id="fileInput" />
+                            <button class="btn" onclick="document.getElementById('fileInput').click()">Select
+                                File</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="mb-3">
+                            <label class="form-label">Video Caption</label>
+                            <input type="text" class="form-control" maxlength="50"
+                                placeholder="Enter your video caption...">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Who Can View</label>
+                                <select class="form-select">
+                                    <option selected>All People (Public)</option>
+                                    <option>Private</option>
+                                    <option>Followers Only</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Video Category</label>
+                                <select class="form-select">
+                                    <option selected>Fitness & Wellness</option>
+                                    <option>Education</option>
+                                    <option>Technology</option>
+                                    <option>Lifestyle</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Label</label>
+                            <textarea class="form-control" maxlength="300" rows="2"
+                                placeholder="Enter your main text here..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Video Thumbnails Cover</label>
+                            <div class="d-flex thumb-preview">
+                                <img src="../assets/img/Village-Copa/hair.jpg" alt="thumb" />
+                                <img src="../assets/img/Village-Copa/dress2.jpg" alt="thumb" />
+                                <img src="../assets/img/Village-Copa/dress1.jpg" alt="thumb" />
+                                <div class="add-thumb">+</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Allow Users To</label>
+                            <div class="d-flex gap-2">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" checked /> Comment
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" checked /> Duet
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" /> Remix
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" checked /> Share
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" /> Save
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-success">Upload</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const dropzone = document.getElementById("dropzone");
+        const fileInput = document.getElementById("fileInput");
+
+        dropzone.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            dropzone.classList.add("border-primary", "bg-light");
+        });
+
+        dropzone.addEventListener("dragleave", () => {
+            dropzone.classList.remove("border-primary", "bg-light");
+        });
+
+        dropzone.addEventListener("drop", (e) => {
+            e.preventDefault();
+            dropzone.classList.remove("border-primary", "bg-light");
+            const file = e.dataTransfer.files[0];
+            if (file) alert("File dropped: " + file.name);
+        });
+
+        fileInput.addEventListener("change", () => {
+            const file = fileInput.files[0];
+            if (file) alert("File selected: " + file.name);
+        });
+    </script>
+</body>
+
+</html>
